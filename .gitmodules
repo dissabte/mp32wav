@@ -1,3 +1,6 @@
 [submodule "external/lame"]
 	path = external/lame
 	url = https://github.com/dissabte/lame.git
+[submodule "external/unittest-cpp"]
+	path = external/unittest-cpp
+	url = https://github.com/unittest-cpp/unittest-cpp.git

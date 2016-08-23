@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.0)
+
+if(EXISTS ${CMAKE_SOURCE_DIR}/../external/unittest-cpp/CMakeLists.txt)
+	message(STATUS "Processing unittest-cpp...")
+	set(UNITTEST_CPP_FOUND ON)
+	set(UNITTEST_CPP_DIR "${CMAKE_SOURCE_DIR}/../external/unittest-cpp")
+	add_subdirectory(${UNITTEST_CPP_DIR} unittest-cpp)
+	message(STATUS "Processing unittest-cpp done")
+else()
+	message(WARNING "Submodule unittest-cpp is missing - tests won't be built. Update unittest-cpp submodule to use tests.")
+endif()
