@@ -1,0 +1,3 @@
+[submodule "external/lame"]
+	path = external/lame
+	url = https://github.com/dissabte/lame.git
