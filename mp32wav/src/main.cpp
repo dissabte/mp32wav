@@ -2,6 +2,7 @@
 #include <lame.h>
 #include <libgen.h>
 #include "ProgramOptions.h"
+#include "MpegDecoder.h"
 
 static void printUsage(const std::string& name)
 {
@@ -48,6 +49,9 @@ int main(int argc, char* argv[])
 		const std::string inputFileName = programOptions.getOptionArgument(kInput);
 		const std::string outputFileName = programOptions.getOptionArgument(kOutput);
 		std::cout << "INPUT:" << inputFileName << ", OUTPUT:" << outputFileName << std::endl;
+		MpegDecoder decoder;
+		bool result = decoder.openFile(inputFileName);
+		std::cout << "Input file is " << (result ? "VALID" : "INVALID") << std::endl;
 	}
 
 	return 0;
